@@ -17,7 +17,7 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Detail screen'),),
+      appBar: AppBar(),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(left: 15, right: 15),
