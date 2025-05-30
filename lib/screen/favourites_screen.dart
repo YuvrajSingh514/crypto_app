@@ -10,6 +10,6 @@ class FavouritesScreen extends StatefulWidget {
 class _FavouritesScreenState extends State<FavouritesScreen> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Text('favourites will show here'));
+    return Text('favourites will show here');
   }
 }
