@@ -1,6 +1,8 @@
 import 'package:crypto_app/models/crypto_data.dart';
 import 'package:crypto_app/providers/market_provider.dart';
-import 'package:crypto_app/screen/detail_screen.dart';
+
+import 'package:crypto_app/widgets/crypto_list_tile.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -33,76 +35,7 @@ class _MarketListState extends State<MarketList> {
               itemBuilder: (context, index) {
                 CryptoData currentCrypto = marketProvider.marketList[index];
 
-                return ListTile(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder:
-                            (context) => DetailScreen(id: currentCrypto.id!),
-                      ),
-                    );
-                  },
-                  contentPadding: EdgeInsets.all(0),
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(currentCrypto.image ?? ''),
-                  ),
-                  title: Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          currentCrypto.name!,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Icon(Icons.favorite_border, size: 20),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text(currentCrypto.symbol!.toUpperCase()),
-                  trailing: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-
-                    children: [
-                      Text(
-                        // ignore: prefer_interpolation_to_compose_strings
-                        '₹ ' + currentCrypto.currentPrice!.toStringAsFixed(2),
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                      Builder(
-                        builder: (context) {
-                          double priceChange = currentCrypto.priceChange24h!;
-                          double priceChangePercentage =
-                              currentCrypto.priceChangePercentage24h!;
-                          if (priceChange < 0) {
-                            //negative
-                            return Text(
-                              '${priceChangePercentage.toStringAsFixed(2)}% (${priceChange.toStringAsFixed(2)})',
-                              style: TextStyle(fontSize: 13, color: Colors.red),
-                            );
-                          } else {
-                            //positive
-                            return Text(
-                              '+${priceChangePercentage.toStringAsFixed(2)}% (+${priceChange.toStringAsFixed(2)})',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.green,
-                              ),
-                            );
-                          }
-                        },
-                      ),
-                    ],
-                  ),
-                );
+                return CryptoListTile(currentCrypto: currentCrypto);
               },
             ),
           );

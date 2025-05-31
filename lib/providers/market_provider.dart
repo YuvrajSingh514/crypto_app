@@ -39,11 +39,13 @@ class MarketProvider with ChangeNotifier {
     int indexOfCrypto = marketList.indexOf(crypto);
     marketList[indexOfCrypto].isFavourite = true;
     await LocalStorage.addFavorite(crypto.id!);
+    notifyListeners();
   }
 
   void removeFavorites(CryptoData crypto) async {
     int indexOfCrypto = marketList.indexOf(crypto);
     marketList[indexOfCrypto].isFavourite = true;
     await LocalStorage.addFavorite(crypto.id!);
+    notifyListeners();
   }
 }
