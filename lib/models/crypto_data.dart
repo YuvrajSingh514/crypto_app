@@ -13,6 +13,7 @@ class CryptoData {
   double? circulatingSupply;
   double? ath;
   double? atl;
+  bool isFavourite = false;
 
   CryptoData({
     this.id,
@@ -42,7 +43,9 @@ class CryptoData {
     high24h = double.parse(json['high_24h'].toString());
     low24h = double.parse(json['low_24h'].toString());
     priceChange24h = double.parse(json['price_change_24h'].toString());
-    priceChangePercentage24h = double.parse(json['price_change_percentage_24h'].toString());
+    priceChangePercentage24h = double.parse(
+      json['price_change_percentage_24h'].toString(),
+    );
     circulatingSupply = double.parse(json['circulating_supply'].toString());
     ath = double.parse(json['ath'].toString());
     atl = double.parse(json['atl'].toString());

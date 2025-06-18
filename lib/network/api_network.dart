@@ -4,7 +4,8 @@ import 'package:http/http.dart' as http;
 
 class ApiNetwork {
   static Future<List<dynamic>> getMarket() async {
-    Uri requestPath = Uri.parse(
+    try{
+      Uri requestPath = Uri.parse(
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr',
     );
     var response = await http.get(requestPath);
@@ -12,5 +13,10 @@ class ApiNetwork {
 
     List<dynamic> market = decodedResponse as List<dynamic>;
     return market;
+    }
+    catch(ex){
+      return [];
+    }
+    
   }
 }
