@@ -1,16 +1,27 @@
 # crypto_app
 
-A new Flutter project.
+A fully responsive cryptocurrency tracker built with Flutter that displays real-time crypto data and detailed information about each currency. It leverages http for API calls, Provider for state management, and includes a user-friendly Favorites feature.
 
-## Getting Started
+## Features
+- Real-time Cryptocurrency Listings.
+- Detailed Coin Info (price, market cap, volume, etc.).
+- Add/Remove Favorites button.
+- Api from Coingecko.
+- API Integration using http.
+- State Management with Provider.
+- Pull to refresh and error handling.
+- Dark/Light Theme button.
+- Shared Preference for theme.
 
-This project is a starting point for a Flutter application.
+## dependencies
+-  flutter:
+    sdk: flutter
+- cupertino_icons: ^1.0.8
+- provider: ^6.1.5
+- http: ^1.4.0
+- shared_preferences: ^2.5.3
 
-A few resources to get you started if this is your first Flutter project:
+## api used
+- https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  
