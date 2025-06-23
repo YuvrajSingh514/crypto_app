@@ -24,4 +24,7 @@ A fully responsive cryptocurrency tracker built with Flutter that displays real-
 ## api used
 - https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr
 
+## Screenshots
+- Market screen
+ ![Market Screen](  https://github.com/YuvrajSingh514/crypto_app/blob/62dd00f67c98396588c5fce33353128643d14f60/market_screen.jpg)
   
