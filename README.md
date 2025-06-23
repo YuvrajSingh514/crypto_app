@@ -30,3 +30,6 @@ A fully responsive cryptocurrency tracker built with Flutter that displays real-
   
 - Detail Screen
   ![Detail Screen](https://github.com/YuvrajSingh514/crypto_app/blob/e1520af3ccacafbdd224d289bd77305bd357329d/detail_screen.jpg)
+
+- Favorites Screen
+  ![Favorites Screen](https://github.com/YuvrajSingh514/crypto_app/blob/a1b337399b4e3798ed45d145d4827d768b5d7f5b/favorites_screen.jpg)
